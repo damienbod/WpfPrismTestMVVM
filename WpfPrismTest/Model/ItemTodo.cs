@@ -15,16 +15,18 @@ namespace WpfPrismTest.Model
         public string Title
         {
             get { return _title; }
-            set { _title = value; 
-                OnPropertyChanged("Title"); 
+            set
+            {
+                SetProperty(ref _title, value);
             }
         }
 
         public string Name
         {
             get { return _name; }
-            set { _name = value;
-            OnPropertyChanged("Name"); 
+            set
+            {
+                SetProperty(ref _name, value);
             }
         }
     }

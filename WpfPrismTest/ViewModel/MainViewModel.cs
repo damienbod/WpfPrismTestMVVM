@@ -46,8 +46,9 @@ namespace WpfPrismTest.ViewModel
             get { return _newItemText; }
             set
             {
-                _newItemText = value;
-                OnPropertyChanged("NewItemText");
+                //_newItemText = value;
+                //OnPropertyChanged("NewItemText");
+                SetProperty(ref _newItemText, value);
                 AddCommand.RaiseCanExecuteChanged();
             }
         }

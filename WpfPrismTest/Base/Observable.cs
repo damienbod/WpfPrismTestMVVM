@@ -24,5 +24,13 @@ namespace WpfPrismTest.Base
 
                 
         }
+
+        protected virtual bool SetProperty<T>(ref T storage, T newValue, [CallerMemberName] string propertyName = null)
+        {
+            if(object.Equals(storage,newValue)) return false;
+            storage = newValue;
+            OnPropertyChanged(propertyName);
+            return true;
+        }
     }
 }
